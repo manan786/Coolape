@@ -34,6 +34,9 @@ MongoClient.connect(
           res.status(400).send({ Value: "Unauthorized User" });
         }
       };
+      app.get("/", (req, res) => {
+        res.send("Hello World !");
+      });
       // add user
       app.post("/adduser/:id", myLogger, (req, res) => {
         clientsCollection
